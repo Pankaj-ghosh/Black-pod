@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Angularjs Application</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <style>
+        body
+        {
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+  <div ng-app="myApp" ng-controller="myctrl">
+
+  <nav class="navbar navbar-light bg-light">
+        <form>
+              <input type="search" class="form-control mr-sm-2" placeholder="Search" ng-model="searchsearch" aria-label="Search"/>
+        </form>
+  </nav>
+      <section class="container-fluid">
+          <section class="row justify-content-center">
+              <section class="col-12 col-sm-9 col-md-3">
+                <img src="Logo.webp" class="rounded mx-auto d-block" />
+
+    <form class="form-container text-center align-items-center">
+
+      <div class="form-group">
+        <table class="table table-bordered table-hover">
+            <thead class="thead-light">
+                <tr>
+                    <th>
+                        <a href="#" ng-click="sortType = 'name'; sortReverse = !sortReverse">
+                            Name
+                            <span ng-show="sortType == 'Name' && !sortReverse" class="fa fa-caret-down"></span>
+                            <span ng-show="sortType == 'Name' && sortReverse" class="fa fa-caret-up"></span>
+                        </a>
+                    </th>
+                    <th>
+                        <a href="#" ng-click="sortType = 'Gender'; sortReverse = !sortReverse">
+                            Gender
+                            <span ng-show="sortType == 'Gender' && !sortReverse" class="fa fa-caret-down"></span>
+                            <span ng-show="sortType == 'Gender' && sortReverse" class="fa fa-caret-up"></span>
+                        </a>
+                    </th>
+                    <th>
+                        <a href="#" ng-click="sortType = 'Number'; sortReverse = !sortReverse">
+                            Number
+                            <span ng-show="sortType == 'Number' && !sortReverse" class="fa fa-caret-down"></span>
+                            <span ng-show="sortType == 'Number' && sortReverse" class="fa fa-caret-up"></span>
+                        </a>
+                    </th>
+                    <th>
+                        <a href="#" ng-click="sortType = 'Email'; sortReverse = !sortReverse">
+                            Email
+                            <span ng-show="sortType == 'Email' && !sortReverse" class="fa fa-caret-down"></span>
+                            <span ng-show="sortType == 'Email' && sortReverse" class="fa fa-caret-up"></span>
+                        </a>
+                    </th>
+                    <th>
+                        <a href="#" ng-click="sortType = 'Pasword'; sortReverse = !sortReverse">
+                            Pasword
+                            <span ng-show="sortType == 'Pasword' && !sortReverse" class="fa fa-caret-down"></span>
+                            <span ng-show="sortType == 'Pasword' && sortReverse" class="fa fa-caret-up"></span>
+                        </a>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="x in records | orderBy:sortType:sortReverse | filter:searchsearch">
+                    <td>{{ x.name }}</td>
+                    <td>{{ x.gender }}</td>
+                    <td>{{ x.number }}</td>
+                    <td>{{ x.email}}</td>
+                    <td>{{ x.pwd}}</td>
+                </tr>
+            </tbody>
+        </table>
+      </div>
+
+    </form>
+
+      </section>
+   </section>
+</section>
+    <script>
+        var app = angular.module("myApp", [])
+        app.controller("myctrl", function ($scope) {
+            $scope.sortType = 'Name';
+            $scope.sortReverse = false;
+            $scope.searchsearch = '';
+            $scope.records = [
+              {
+                "name":"ADMINISTRATOR",
+                "gender":"male",
+                "number":"0000",
+                "email":"admin@site.com",
+                "pwd":"password"
+              },
+              {
+                "name":"Veno",
+                "gender":"male",
+                "number":"9942884370",
+                "email":"venodpi@gmail.com",
+                "pwd":"Indhu"
+              },
+              {
+                "name":"Kirthan",
+                "gender":"male",
+                "number":"9982781273",
+                "email":"kirthan@gmail.com",
+                "pwd":"123456"
+              },
+              {
+                "name":"Hari",
+                "gender":"male",
+                "number":"9693346284",
+                "email":"hari19@gmail.com",
+                "pwd":"hariharan"
+              },
+              {
+                "name":"Jeyasri",
+                "gender":"female",
+                "number":"8825739632",
+                "email":"jeyasri18@gmail.com",
+                "pwd":"jeyasri"
+              },
+              {
+                "name":"RajaSurya",
+                "gender":"male",
+                "number":"1234567890",
+                "email":"rajsurya@gmail.com",
+                "pwd":"1234567"
+              },
+              {
+                "name":"Arjith",
+                "gender":"male",
+                "number":"8932754848",
+                "email":"arji@gmail.com",
+                "pwd":"123456"
+              },
+              {
+                "name":"SibiBose",
+                "gender":"male",
+                "number":"9218739274",
+                "email":"sibi@gmail.com",
+                "pwd":"sibibose"
+              },
+              {
+                "name":"Sanjay",
+                "gender":"male",
+                "number":"9876543223",
+                "email":"sanjay@gmail.com",
+                "pwd":"sanjay"
+              },
+              {
+                "name":"Vinith",
+                "gender":"male",
+                "number":"9876543223",
+                "email":"vinith@gmail.com",
+                "pwd":"vinithraj"
+              },
+              {
+                "name":"Vijay",
+                "gender":"male",
+                "number":"9287364473",
+                "email":"vijay@gmail.com",
+                "pwd":"Vijay"
+              },
+              {
+                "name":"aravindh",
+                "gender":"male",
+                "number":"9764326765",
+                "email":"aravindh@gmail.com",
+                "pwd":"aravindh"
+              },
+              {
+                "name":"esf",
+                "gender":"male",
+                "number":"1234567890",
+                "email":"esf@gmail.com",
+                "pwd":"esfty"
+              },
+              {
+                "name":"Balaji",
+                "gender":"male",
+                "number":"1234567890",
+                "email":"balaji@gmail.com",
+                "pwd":"uiopp"
+              },
+              {
+                "name":"abishek",
+                "gender":"male",
+                "number":"5327932430",
+                "email":"balaji@gmail.com",
+                "pwd":"12345"
+              },
+              {
+                "name":"Yogapriya",
+                "gender":"female",
+                "number":"7010874578",
+                "email":"yoga@gmail.com",
+                "pwd":"Mickey"
+              }
+            ];
+        });
+    </script>
+  </div>
+
+</body>
+</html>
