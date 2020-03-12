@@ -5,4 +5,4 @@ A interactive and responsive website used by Lawyers and their clients. Clients 
 Website starts executing from this page  : index.html
 
 
-Tools used : HTML, CSS, javascript, PHP
+Tools used : HTML, CSS, javascript, PHP,  AngularJS
